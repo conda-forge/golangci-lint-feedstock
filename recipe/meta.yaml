@@ -1,5 +1,5 @@
 {% set name = "golangci-lint" %}
-{% set version = "1.64.7" %}
+{% set version = "1.64.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/golangci/golangci-lint/archive/v{{ version }}.tar.gz
-  sha256: 1474ceb2e620f4c69e9a9c94942675a59be5d188fcec728c7ba15127133b2404
+  sha256: 30ee6e08bf87d7bc2dcc80b7708033e967eae795451d63a693614c905d42241b
 
 build:
   number: 0
