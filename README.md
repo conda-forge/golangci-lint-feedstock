@@ -3,13 +3,13 @@ About golangci-lint-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/golangci-lint-feedstock/blob/main/LICENSE.txt)
 
-Home: https://golangci-lint.run
+Home: https://golangci-lint.run/
 
 Package license: GPL-3.0-only
 
 Summary: Stricter gofmt
 
-Development: https://github.com/golangci/golangci-lint.git
+Development: https://github.com/golangci/golangci-lint
 
 Current build status
 ====================
