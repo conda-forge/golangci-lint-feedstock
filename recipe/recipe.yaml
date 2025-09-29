@@ -19,7 +19,7 @@ requirements:
 
 tests:
   - script:
-      - ${{ name }} --help
+      - golangci-lint --help
 
 about:
   license: GPL-3.0-only
