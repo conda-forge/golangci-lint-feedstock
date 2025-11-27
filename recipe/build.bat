@@ -1,7 +1,7 @@
 @echo on
 @setlocal EnableDelayedExpansion
 
-go build -buildmode=pie -trimpath -o="%LIBRARY_BIN%\%PKG_NAME%.exe" -ldflags="-s -X main.version=%PKG_VERSION%" .\cmd\%PKG_NAME% || goto :error
+go build -o="%LIBRARY_BIN%\%PKG_NAME%.exe" -ldflags="-s -X main.version=%PKG_VERSION%" .\cmd\%PKG_NAME% || goto :error
 go-licenses save .\cmd\%PKG_NAME% --save_path=license-files ^
     --ignore github.com/golangci/golangci-lint ^
     --ignore github.com/ashanbrown/forbidigo ^
