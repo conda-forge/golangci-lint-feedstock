@@ -6,6 +6,7 @@ go build -o=${PREFIX}/bin/${PKG_NAME} -ldflags="-s -w -X main.version=${PKG_VERS
 go-licenses save ./cmd/${PKG_NAME} --save_path=license-files \
     --ignore github.com/golangci/golangci-lint \
     --ignore github.com/ashanbrown/forbidigo \
+    --ignore github.com/alecthomas/chroma \
     --ignore github.com/ashanbrown/makezero
 
 # Manually copy licenses that go-licenses could not download

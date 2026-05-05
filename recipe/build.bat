@@ -5,7 +5,8 @@ go build -o="%LIBRARY_BIN%\%PKG_NAME%.exe" -ldflags="-s -X main.version=%PKG_VER
 go-licenses save .\cmd\%PKG_NAME% --save_path=license-files ^
     --ignore github.com/golangci/golangci-lint ^
     --ignore github.com/ashanbrown/forbidigo ^
-    --ignore github.com/ashanbrown/makezero || goto :error
+    --ignore github.com/ashanbrown/makezero ^
+    --ignore github.com/alecthomas/chroma || goto :error
 xcopy /s %RECIPE_DIR%\license-files\* %SRC_DIR%\license-files || goto :error
 
 goto :eof
