@@ -1,7 +1,8 @@
 @echo on
 @setlocal EnableDelayedExpansion
 
-go build -o="%LIBRARY_BIN%\%PKG_NAME%.exe" -ldflags="-s -X main.version=%PKG_VERSION%" .\cmd\%PKG_NAME% || goto :error
+for /f "usebackq delims=" %%i in (`powershell -NoProfile -Command "Get-Date -Format 'yyyy-MM-ddTHH:mm:ssZ' -AsUTC"`) do set "BUILD_DATE=%%i"
+go build -o="%LIBRARY_BIN%\%PKG_NAME%.exe" -ldflags="-s -w -X main.version=%PKG_VERSION% -X main.date=%BUILD_DATE%" .\cmd\%PKG_NAME% || goto :error
 go-licenses save .\cmd\%PKG_NAME% --save_path=license-files ^
     --ignore github.com/golangci/golangci-lint ^
     --ignore github.com/ashanbrown/forbidigo ^
