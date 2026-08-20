@@ -1,5 +1,5 @@
 context:
-  version: "2.12.2"
+  version: "2.13.0"
 
 package:
   name: golangci-lint
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/golangci/golangci-lint/archive/v${{ version }}.tar.gz
-  sha256: 568cfb0ad40832177826608003065a976254415509dd8b4e3ba19ee586388b94
+  sha256: 92988b877b584f9f9d565a04b40ed0ef3004e32c2196ebf99cbeaed67ed5f955
 
 build:
   number: 0
