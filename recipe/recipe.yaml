@@ -25,7 +25,7 @@ tests:
       - if: unix
         then: test "$(golangci-lint version --short)" = "${{ version }}"
       - if: win
-        then: golangci-lint version --short | findstr /X /C:"${{ version }}"
+        then: golangci-lint version --short | findstr /C:"${{ version }}"
 
 about:
   license: GPL-3.0-only

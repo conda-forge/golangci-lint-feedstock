@@ -11,4 +11,9 @@ conda_install_tool: pixi
 github:
   branch_name: main
   tooling_branch_name: main
+# conda-smithy only defaults provider for linux_64/osx_64/win_64; a native
+# target with a null provider is dropped from CI altogether.
+provider:
+  linux_aarch64: github_actions
+  osx_arm64: azure
 test: native_and_emulated
