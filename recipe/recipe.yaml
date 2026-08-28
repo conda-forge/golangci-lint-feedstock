@@ -1,5 +1,5 @@
 context:
-  version: "2.12.2"
+  version: "2.13.2"
 
 package:
   name: golangci-lint
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/golangci/golangci-lint/archive/v${{ version }}.tar.gz
-  sha256: 568cfb0ad40832177826608003065a976254415509dd8b4e3ba19ee586388b94
+  sha256: a79a7a1faad9c1538e3f7f8b32843a53bbeedfa9ead45d9e8ca3bb210d55ece0
 
 build:
   number: 0
@@ -20,6 +20,12 @@ requirements:
 tests:
   - script:
       - golangci-lint --help
+      # Without -X main.date the linker-injected version is replaced by
+      # debug.ReadBuildInfo().Main.Version, i.e. "(devel)".
+      - if: unix
+        then: test "$(golangci-lint version --short)" = "${{ version }}"
+      - if: win
+        then: golangci-lint version --short | findstr /C:"${{ version }}"
 
 about:
   license: GPL-3.0-only
@@ -33,3 +39,4 @@ about:
 extra:
   recipe-maintainers:
     - danielnachun
+    - trim21
