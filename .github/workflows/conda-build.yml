@@ -46,17 +46,27 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-24.04-arm']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_ppc64le_
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
+          - CONFIG: osx_64_
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
-            build_workspace_dir: build_artifacts
+            build_workspace_dir: ~/miniforge3/conda-bld
             docker_run_args: 
             free_disk_space: skip
-            os: ubuntu
+            os: macos
             pagefile_size: 0
             resize_partitions: False
-            runs_on: ['ubuntu-latest']
+            runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
+          - CONFIG: osx_arm64_
+            STORE_BUILD_ARTIFACTS: False
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: skip
+            os: macos
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['macos-15']
             tools_install_dir: ~/miniforge3
           - CONFIG: win_64_
             STORE_BUILD_ARTIFACTS: False
